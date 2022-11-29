@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Container } from '@chakra-ui/react';
+import React, { createContext, useState } from 'react';
 import './App.css';
+// import DataDisplay from './components/DataDisplay';
+import { CountContext, useCount } from './context/count';
+
+// const count = 0
+// export const CountContext = createContext(count)
 
 function App() {
+
+  // const [count, setCount] = useState(0)
+  const count = useCount()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CountContext.Provider value={count}>
+      <Container>
+        {/* ここから渡す */}
+        {/* <DataDisplay/> */}
+
+      </Container>
+    </CountContext.Provider>
   );
 }
 
