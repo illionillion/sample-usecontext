@@ -10,10 +10,14 @@ const CountButton: React.FC = () => {
   const handleClickMinus = () => {
     setIsCount(count - 1); // Context値更新
   };
+  const handleClickReset = () => {
+    setIsCount(0); // Context値更新
+  };
   return (
     <HStack justifyContent="center">
       <Button onClick={handleClickPlus}>+</Button>
-      <Button onClick={handleClickMinus}>-</Button>
+      <Button onClick={handleClickMinus} disabled={count > 0 ? false : true}>-</Button>
+      <Button onClick={handleClickReset}>R</Button>
     </HStack>
   );
 };

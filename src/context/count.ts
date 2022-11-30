@@ -1,10 +1,11 @@
 import { createContext, useCallback, useState } from "react";
 
+// 型
 type CountContextProps = {
   count: number;
   setIsCount: (count: number) => void;
 };
-
+// コンテキスト
 const defaultContext: CountContextProps = {
   count: 0,
   setIsCount: () => {},

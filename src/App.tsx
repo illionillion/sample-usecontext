@@ -9,6 +9,7 @@ function App() {
   const count = useCount()
 
   return (
+    // 型が一緒だから渡せる？
     <CountContext.Provider value={count}>
       <Container>
         <Stack>
