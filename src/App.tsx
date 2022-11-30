@@ -1,23 +1,20 @@
-import { Container } from '@chakra-ui/react';
-import React, { createContext, useState } from 'react';
+import { Container, Stack } from '@chakra-ui/react';
 import './App.css';
-// import DataDisplay from './components/DataDisplay';
+import CountButton from './components/CountButton';
+import DataDisplay from './components/DataDisplay';
 import { CountContext, useCount } from './context/count';
-
-// const count = 0
-// export const CountContext = createContext(count)
 
 function App() {
 
-  // const [count, setCount] = useState(0)
   const count = useCount()
 
   return (
     <CountContext.Provider value={count}>
       <Container>
-        {/* ここから渡す */}
-        {/* <DataDisplay/> */}
-
+        <Stack>
+          <DataDisplay/>
+          <CountButton/>
+        </Stack>
       </Container>
     </CountContext.Provider>
   );

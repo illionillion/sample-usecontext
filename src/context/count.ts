@@ -10,13 +10,12 @@ const defaultContext: CountContextProps = {
   setIsCount: () => {},
 };
 
+// context object
 export const CountContext = createContext<CountContextProps>(defaultContext);
 
 // custom Hook
 export const useCount = (): CountContextProps => {
-  // state名はThemeContext typeのプロパティに合わせる。
   const [count, setCount] = useState(0);
-  // 関数名はThemeContext typeのプロパティに合わせる。
   const setIsCount = useCallback((current: number): void => {
     setCount(current);
   }, []);
