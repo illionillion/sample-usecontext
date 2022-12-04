@@ -1,23 +1,22 @@
-import { Container, Stack } from '@chakra-ui/react';
-import './App.css';
-import CountButton from './components/CountButton';
-import DataDisplay from './components/DataDisplay';
-import { CountContext, useCount } from './context/count';
+import { Button, Container, HStack, Stack } from "@chakra-ui/react";
+import "./App.css";
+import CountConatiner from "./components/CountContainer";
+import ListControl from "./components/ListControl";
+import { CountListContext, useCountList } from "./context/countList";
 
 function App() {
 
-  const count = useCount()
+  const countList = useCountList()
 
   return (
-    // 型が一緒だから渡せる？
-    <CountContext.Provider value={count}>
+    <CountListContext.Provider value={countList}>
       <Container>
-        <Stack>
-          <DataDisplay/>
-          <CountButton/>
-        </Stack>
+        <ListControl/>
       </Container>
-    </CountContext.Provider>
+      <Container>
+        {countList.countList.map((val, index) => <CountConatiner key={index} />)}
+      </Container>
+    </CountListContext.Provider>
   );
 }
 
