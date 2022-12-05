@@ -14,7 +14,7 @@ function App() {
         <ListControl/>
       </Container>
       <Container>
-        {countList.countList.map((val, index) => <CountConatiner key={index} />)}
+        {countList.countList.map((val, index) => <CountConatiner key={index} id={0} />)}
       </Container>
     </CountListContext.Provider>
   );

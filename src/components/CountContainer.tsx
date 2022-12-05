@@ -3,9 +3,13 @@ import { CountContext, useCount } from "../context/count";
 import CountButton from "./CountButton";
 import DataDisplay from "./DataDisplay";
 
-const CountConatiner: React.FC = () => {
+type CountConatinerProps = {
+  id: number
+}
+
+const CountConatiner: React.FC<CountConatinerProps> = ({id}) => {
   
-    const count = useCount()
+    const count = useCount(id)
 
   return (
     <CountContext.Provider value={count}>

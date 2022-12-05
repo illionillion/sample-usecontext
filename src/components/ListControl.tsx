@@ -10,10 +10,14 @@ const ListControl: React.FC = () => {
         setisCountList([...countList, 0])
     }
 
+    const allRemoveListClickHandler = () => {
+        setisCountList([0])
+    }
+
   return (
     <HStack justifyContent="center">
       <Button onClick={addListClickHandler}>追加</Button>
-      <Button>全削除</Button>
+      <Button onClick={allRemoveListClickHandler}>全削除</Button>
     </HStack>
   );
 };
